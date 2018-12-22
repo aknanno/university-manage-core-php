@@ -9,7 +9,7 @@ class DB
     private function __construct()
     {
         try {
-            $this->_pdo = new PDO('mysql:host=127.0.0.1;dbname=ums', 'root', '' );
+            $this->_pdo = new PDO('mysql:host=127.0.0.1;dbname=', '', '' );
         } catch (PDOException $e) {
             die($e->getMessage());
         }
@@ -19,7 +19,7 @@ class DB
     public static function getDB()
     {
         if (!isset(self::$_instance)) {
-            self::$_instance = new PDO('mysql:host=127.0.0.1;dbname=ums', 'root', '' );
+            self::$_instance = new PDO('mysql:host=127.0.0.1;dbname=', '', '' );
         }
         return self::$_instance;
     }
